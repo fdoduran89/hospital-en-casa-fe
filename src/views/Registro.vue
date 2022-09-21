@@ -12,10 +12,10 @@
 
                     <div class="mb-4 pb-2">
                       <select class="select">
-                        <option value="1">Title</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                        <option value="4">Four</option>
+                        <option value="1">Perfil</option>
+                        <option value="2">paciente</option>
+                        <option value="3">medico</option>
+                        <option value="4">familiar</option>
                       </select>
                     </div>
 
