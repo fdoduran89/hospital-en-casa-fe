@@ -36,7 +36,7 @@
                             placeholder="Select a profile" selected="0">
                             <option value="0" disabled selected>Seleccione un Perfil</option>
                             <option value="Paciente">Paciente</option>
-                            <option value="Medico">Medico</option>
+                            <option value="Personal Salud">Personal Salud</option>
                             <option value="Familiar">Familiar</option>
                           </select>
                           <br>
@@ -82,7 +82,7 @@
                             <option value="Tio(a)">Tio(a)</option>
                             <option value="Abuelo(a)">Abuelo(a)</option>
                             <option value="Conyugue">Conyugue</option>
-                            <option value="Ninguno">Ninguno</option>
+                            <option value="Ninguno">Otro</option>
                           </select>
                           <br>
                         </div>
@@ -93,13 +93,8 @@
                             placeholder="" selected="0">
                             <option value="0" disabled selected>Rol Medico</option>
                             <option value="Enfermero">Enfermero</option>
-                            <option value="Medico_urgencias">Medico_urgencias</option>
-                            <option value="Medico_general">Medico_general</option>
-                            <option value="Pediatra">Pediatra</option>
-                            <option value="Anestesiologo">Anestesiologo</option>
-                            <option value="Cirujano">Cirujano</option>
-                            <option value="Internista">Internista</option>
-                            <option value="Otro">Ninguno</option>
+                            <option value="Medico_urgencias">Medico</option>
+                            <option value="Otro">Otro</option>
                           </select>
                           <br>
                         </div>
@@ -114,7 +109,7 @@
                             <option value="Otorrinolaringologia">Otorrinolaringologia</option>
                             <option value="Oftanmologia">Oftanmologia</option>
                             <option value="Odontologia">Odontologia</option>
-                            <option value="Medicina_general">Medicina_general</option>
+                            <option value="Medicina_general">Medicina cd general</option>
                             <option value="Emergencia">Emergencia</option>
                             <option value="Otro">Otro</option>
                           </select>
