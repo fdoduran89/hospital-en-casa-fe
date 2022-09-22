@@ -21,13 +21,13 @@
                         </div>
 
                         <div class="form-outline">
-                          <input id="registro_input_password" class="form-control form-control-lg" type="password"/>
-                          <label class="form-label" for="registro_input_password">Contraseña*</label>
+                          <input id="registro_input_nombres" class="form-control form-control-lg" type="nombres"/>
+                          <label class="form-label" for="registro_input_nombres">Nombres*</label>
                         </div>
 
                         <div class="form-outline">
                           <input id="registro_input_birthday" class="form-control form-control-sm" type="date"/>
-                          <label class="form-label" for="registro_input_birthday">Fecha de Nacimiento</label>
+                          <label class="form-label" for="registro_input_birthday">Fecha de Nacimiento*</label>
                         </div>
 
                         <div class="form-outline" style="margin-top: 0.8rem;">
@@ -56,18 +56,18 @@
 
                       <div class="col-md-6 mb-4 pb-2">
                         <div class="form-outline">
-                          <input type="text" id="registro_input_name" class="form-control form-control-lg" />
-                          <label class="form-label" for="registro_input_name">Nombres</label>
+                          <input type="text" id="registro_input_password" class="form-control form-control-lg" />
+                          <label class="form-label" for="registro_input_password">Contraseña*</label>
                         </div>
 
                         <div class="form-outline">
                           <input type="text" id="registro_input_lastname" class="form-control form-control-lg" />
-                          <label class="form-label" for="registro_input_lastname">Apellidos</label>
+                          <label class="form-label" for="registro_input_lastname">Apellidos*</label>
                         </div>
 
                         <div class="form-outline">
                           <input type="text" id="registro_input_phone" class="form-control form-control-lg" />
-                          <label class="form-label" for="registro_input_phone">Celular</label>
+                          <label class="form-label" for="registro_input_phone">Celular*</label>
                         </div>
 
                         <div class="form-outline">
