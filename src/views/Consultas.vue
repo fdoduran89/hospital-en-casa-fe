@@ -21,17 +21,6 @@
               
               <input type="submit" value="Consultar" class="btn btn-block btn-primary button-consulta">
               
-              <div class="social-login">
-                <a href="#" class="facebook">
-                  <span class="icon-facebook mr-3"></span> 
-                </a>
-                <a href="#" class="twitter">
-                  <span class="icon-twitter mr-3"></span> 
-                </a>
-                <a href="#" class="google">
-                  <span class="icon-google mr-3"></span> 
-                </a>
-              </div>
             </form>
             </div>
           </div>
@@ -70,6 +59,7 @@ export default {
 
   .button-consulta{
     position:relative;
+    background-color: rgb(108, 99, 255);
     left:2px;
     top:-10px
   }
