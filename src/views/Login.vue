@@ -31,10 +31,11 @@
                   <div class="control__indicator"></div>
                 </label>
                 <span class="ml-auto"><a href="#" class="forgot-pass forgot-password">Olvide mi contraseña</a></span> 
+                
               </div>
 
               <input type="submit" value="Log In" class="btn btn-block btn-primary button-login">
-              
+              <span class="ml-auto"><a href="#" class="registro">Registro</a></span>
             </form>
             </div>
           </div>
@@ -72,23 +73,23 @@ export default {
   }
 
   .remember-me{
-    margin-right:7px;
+    margin-right:-7px;
     position:relative;
     left:118px;
-    top:-4px
+    top:-25px
   }
 
   .forgot-password{
     margin-left: -5px;
     position:relative;
-    top:75px
+    top:55px
   }
 
   .button-login{
     position:relative;
     background-color: rgb(108, 99, 255);
-    left:2px;
-    top:-43px
+    left:30px;
+    top:-65px
   }
 
   .small-checkbox{
