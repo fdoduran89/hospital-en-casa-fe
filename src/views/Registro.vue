@@ -43,15 +43,9 @@
                         <br>
                       </div>
                       
-                      <div class="form-outline" style="margin-top: 0.8rem;">
-                        <label class="form-label" for="registro_input_paciente">Paciente*</label>
-                        <select class="form-select form-control form-control-lg "
-                        id="registro_input_paciente" name="registro_input_paciente" required
-                            placeholder="Select a patient" selected="0">
-                            <option value="0" disabled selected>Seleccione un Paciente</option>
-                            <option value="1">Pedro Perez</option>
-                          </select>
-                          <br>
+                      <div class="form-outline">
+                        <label class="form-label" for="registro_input_paciente">Paciente</label>
+                        <input id="registro_input_paciente" class="form-control form-control-lg" type="paciente"/>
                         </div>
 
                       </div>
@@ -95,9 +89,10 @@
                           <select class="form-select form-control form-control-lg"
                             id="registro_input_rol" name="registro_input_rol" required
                             placeholder="" selected="0">
-                            <option value="0" disabled selected>Rol Medico</option>
+                            <option value="0" disabled selected>Rol</option>
                             <option value="Enfermero">Enfermero</option>
                             <option value="Medico_urgencias">Medico</option>
+                            <option value="Auxiliar">Auxiliar</option>
                             <option value="Otro">Otro</option>
                           </select>
                           <br>
