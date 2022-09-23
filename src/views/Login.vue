@@ -19,24 +19,28 @@
                 <input type="text" class="form-control" id="username">
 
               </div>
-              <div class="form-group last mb-4 input-padding">
+              <div class="form-group last input-padding">
                 <label for="password">Password</label>
                 <input type="password" class="form-control" id="password">
                 
               </div>
               
-              <div class="d-flex mb-5 align-items-center">
-                <label class="control control--checkbox mb-0 remember-me"><span class="caption">Recuerdame</span>
-                  <input type="checkbox" checked="checked" class="small-checkbox"/>
+              <div class="mb-1 align-items-center">
+                <label class="control control--checkbox mb-0">
+                  <div class="caption mb-4">Recuerdame
+                    <input type="checkbox" checked="checked" class="small-checkbox"/>
+                  </div>
                   <div class="control__indicator"></div>
                 </label>
-                <span class="ml-auto"><a href="#" class="forgot-pass forgot-password">Olvide mi contraseña</a></span> 
-                
+                <div>
+                  
+                  <input type="submit" value="Log In" class="btn btn-block btn-primary button-login">
+                </div>
               </div>
-
-              <input type="submit" value="Log In" class="btn btn-block btn-primary button-login">
-              <span class="ml-auto"><a href="#" class="registro">Registro</a></span>
+              
             </form>
+            <div class="ml-auto"><a href="#" class="forgot-pass forgot-password">Olvide mi contraseña</a></div> 
+            <div class="ml-auto"><a href="registro" class="registro">Registro</a></div>
             </div>
           </div>
           
@@ -86,10 +90,9 @@ export default {
   }
 
   .button-login{
-    position:relative;
+    position: relative;
     background-color: rgb(108, 99, 255);
-    left:30px;
-    top:-65px
+    top: -10px;
   }
 
   .small-checkbox{
