@@ -16,35 +16,37 @@
                       <div class="col-md-6 mb-4 pb-2">
 
                         <div class="form-outline">
-                          <input type="text" id="registro_input_username" class="form-control form-control-lg" />
                           <label class="form-label" for="registro_input_username">Login*</label>
+                          <input type="text" id="registro_input_username" class="form-control form-control-lg" />
                         </div>
 
                         <div class="form-outline">
-                          <input id="registro_input_nombres" class="form-control form-control-lg" type="nombres"/>
                           <label class="form-label" for="registro_input_nombres">Nombres*</label>
+                          <input id="registro_input_nombres" class="form-control form-control-lg" type="nombres"/>
                         </div>
 
                         <div class="form-outline">
-                          <input id="registro_input_birthday" class="form-control form-control-sm" type="date"/>
                           <label class="form-label" for="registro_input_birthday">Fecha de Nacimiento*</label>
+                          <input id="registro_input_birthday" class="form-control form-control-sm" type="date"/>
                         </div>
-
+                        
                         <div class="form-outline" style="margin-top: 0.8rem;">
+                          <label class="form-label" for="registro_input_perfil">Perfil*</label>
                           <select class="form-select form-control form-control-lg"
-                            id="registro_input_perfil" name="registro_input_perfil" required
-                            placeholder="Select a profile" selected="0">
-                            <option value="0" disabled selected>Seleccione un Perfil</option>
-                            <option value="Paciente">Paciente</option>
-                            <option value="Personal Salud">Personal Salud</option>
-                            <option value="Familiar">Familiar</option>
-                          </select>
-                          <br>
-                        </div>
-
-                        <div class="form-outline" style="margin-top: 0.8rem;">
-                          <select class="form-select form-control form-control-lg "
-                            id="registro_input_perfil" name="registro_input_paciente" required
+                          id="registro_input_perfil" name="registro_input_perfil" required
+                          placeholder="Select a profile" selected="0">
+                          <option value="0" disabled selected>Seleccione un Perfil</option>
+                          <option value="Paciente">Paciente</option>
+                          <option value="Personal Salud">Personal Salud</option>
+                          <option value="Familiar">Familiar</option>
+                        </select>
+                        <br>
+                      </div>
+                      
+                      <div class="form-outline" style="margin-top: 0.8rem;">
+                        <label class="form-label" for="registro_input_paciente">Paciente*</label>
+                        <select class="form-select form-control form-control-lg "
+                        id="registro_input_paciente" name="registro_input_paciente" required
                             placeholder="Select a patient" selected="0">
                             <option value="0" disabled selected>Seleccione un Paciente</option>
                             <option value="1">Pedro Perez</option>
@@ -56,21 +58,22 @@
 
                       <div class="col-md-6 mb-4 pb-2">
                         <div class="form-outline">
-                          <input type="text" id="registro_input_password" class="form-control form-control-lg" />
                           <label class="form-label" for="registro_input_password">Contraseña*</label>
+                          <input type="text" id="registro_input_password" class="form-control form-control-lg" />
                         </div>
 
                         <div class="form-outline">
-                          <input type="text" id="registro_input_lastname" class="form-control form-control-lg" />
                           <label class="form-label" for="registro_input_lastname">Apellidos*</label>
+                          <input type="text" id="registro_input_lastname" class="form-control form-control-lg" />
                         </div>
 
                         <div class="form-outline">
-                          <input type="text" id="registro_input_phone" class="form-control form-control-lg" />
                           <label class="form-label" for="registro_input_phone">Celular*</label>
+                          <input type="text" id="registro_input_phone" class="form-control form-control-lg" />
                         </div>
 
                         <div class="form-outline">
+                          <label class="form-label" for="registro_input_parentesco">Parentesco</label>
                           <select class="form-select form-control form-control-lg"
                             id="registro_input_parentesco" name="registro_input_parentesco" required
                             placeholder="" selected="0">
@@ -88,6 +91,7 @@
                         </div>
 
                         <div class="form-outline">
+                          <label class="form-label" for="registro_input_rol">Rol</label>
                           <select class="form-select form-control form-control-lg"
                             id="registro_input_rol" name="registro_input_rol" required
                             placeholder="" selected="0">
@@ -100,8 +104,9 @@
                         </div>
 
                         <div class="form-outline">
+                          <label class="form-label" for="registro_input_especialidad">Especialidad</label>
                           <select class="form-select form-control form-control-lg"
-                            id="registro_input_perfil" name="registro_input_perfil" required
+                            id="registro_input_especialidad" name="registro_input_especialidad" required
                             placeholder="" selected="0">
                             <option value="0" disabled selected>Especialidad</option>
                             <option value="Pediatria">Pediatria</option>
@@ -125,15 +130,15 @@
 
                     <div class="mb-4 pb-2">
                       <div class="form-outline form-white">
-                        <input type="text" id="form3Examplea2" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Examplea2">Dirección</label>
+                        <label class="form-label" for="registro_input_direccion">Dirección</label>
+                        <input type="text" id="registro_input_direccion" class="form-control form-control-lg" />
                       </div>
                     </div>
 
                     <div class="mb-4 pb-2">
                       <div class="form-outline form-white">
-                        <input type="text" id="form3Examplea3" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Examplea3">Punto de Referencia</label>
+                        <label class="form-label" for="registro_input_referencia">Punto de Referencia</label>
+                        <input type="text" id="registro_input_referencia" class="form-control form-control-lg" />
                       </div>
                     </div>
 
@@ -141,16 +146,16 @@
                       <div class="col-md-5 mb-4 pb-2">
 
                         <div class="form-outline form-white">
-                          <input type="text" id="form3Examplea4" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Examplea4">Código Postal</label>
+                          <label class="form-label" for="registro_input_codigo_postal">Código Postal</label>
+                          <input type="text" id="registro_input_codigo_postal" class="form-control form-control-lg" />
                         </div>
 
                       </div>
                       <div class="col-md-7 mb-4 pb-2">
 
                         <div class="form-outline form-white">
-                          <input type="text" id="form3Examplea5" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Examplea5">Ciudad</label>
+                          <label class="form-label" for="registro_input_ciudad">Ciudad</label>
+                          <input type="text" id="registro_input_ciudad" class="form-control form-control-lg" />
                         </div>
 
                       </div>
@@ -158,8 +163,8 @@
 
                     <div class="mb-4 pb-2">
                       <div class="form-outline form-white">
-                        <input type="text" id="form3Examplea6" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Examplea6">País</label>
+                        <label class="form-label" for="registro_input_pais">País</label>
+                        <input type="text" id="registro_input_pais" class="form-control form-control-lg" />
                       </div>
                     </div>
 
@@ -167,16 +172,16 @@
                       <div class="col-md-5 mb-4 pb-2">
 
                         <div class="form-outline form-white">
-                          <input type="text" id="form3Examplea7" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Examplea7">Código de Área</label>
+                          <label class="form-label" for="registro_input_codigo_area">Código de Área</label>
+                          <input type="text" id="registro_input_codigo_area" class="form-control form-control-lg" />
                         </div>
 
                       </div>
                       <div class="col-md-7 mb-4 pb-2">
 
                         <div class="form-outline form-white">
-                          <input type="text" id="form3Examplea8" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Examplea8">Telf Fijo</label>
+                          <label class="form-label" for="registro_input_telefono">Telefono</label>
+                          <input type="text" id="registro_input_telefono" class="form-control form-control-lg" />
                         </div>
 
                       </div>
@@ -184,8 +189,8 @@
 
                     <div class="mb-4">
                       <div class="form-outline form-white">
-                        <input type="text" id="form3Examplea9" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Examplea9">Email</label>
+                        <label class="form-label" for="registro_input_email">Email</label>
+                        <input type="text" id="registro_input_email" class="form-control form-control-lg" />
                       </div>
                     </div>
 
@@ -215,3 +220,10 @@
     name: 'Registro'
   }
 </script>
+
+<style scoped>
+  .bg-indigo {
+    background-color: rgb(108, 99, 255);
+  }
+  
+</style>

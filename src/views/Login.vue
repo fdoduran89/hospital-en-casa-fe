@@ -35,17 +35,6 @@
 
               <input type="submit" value="Log In" class="btn btn-block btn-primary button-login">
               
-              <div class="social-login">
-                <a href="#" class="facebook">
-                  <span class="icon-facebook mr-3"></span> 
-                </a>
-                <a href="#" class="twitter">
-                  <span class="icon-twitter mr-3"></span> 
-                </a>
-                <a href="#" class="google">
-                  <span class="icon-google mr-3"></span> 
-                </a>
-              </div>
             </form>
             </div>
           </div>
@@ -97,6 +86,7 @@ export default {
 
   .button-login{
     position:relative;
+    background-color: rgb(108, 99, 255);
     left:2px;
     top:-43px
   }

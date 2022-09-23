@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <img src="../assets/images/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
+          <img src="../assets/images/paciente-consulta.png" alt="Image" class="img-fluid m-5">
         </div>
         <div class="col-md-6 contents">
           <div class="row justify-content-center row-custom">
@@ -21,17 +21,6 @@
               
               <input type="submit" value="Consultar" class="btn btn-block btn-primary button-consulta">
               
-              <div class="social-login">
-                <a href="#" class="facebook">
-                  <span class="icon-facebook mr-3"></span> 
-                </a>
-                <a href="#" class="twitter">
-                  <span class="icon-twitter mr-3"></span> 
-                </a>
-                <a href="#" class="google">
-                  <span class="icon-google mr-3"></span> 
-                </a>
-              </div>
             </form>
             </div>
           </div>
@@ -65,11 +54,12 @@ export default {
 
   .row-custom{
     position:relative;
-    top:45px
+    top:65px
   }
 
   .button-consulta{
     position:relative;
+    background-color: rgb(108, 99, 255);
     left:2px;
     top:-10px
   }
