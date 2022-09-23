@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <img src="../assets/images/paciente-consulta.png" alt="Image" class="img-fluid">
+          <img src="../assets/images/paciente-consulta.png" alt="Image" class="img-fluid m-5">
         </div>
         <div class="col-md-6 contents">
           <div class="row justify-content-center row-custom">
@@ -65,7 +65,7 @@ export default {
 
   .row-custom{
     position:relative;
-    top:45px
+    top:65px
   }
 
   .button-consulta{
