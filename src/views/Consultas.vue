@@ -10,7 +10,8 @@
           <div class="row justify-content-center row-custom">
             <div class="col-md-8">
               <div class="mb-4 bg-info text-white">
-                <div contenteditable="true" spellcheck="true" class="h4 mega" data-selected="true" data-label-id="0">Hospital en casa</div>
+                <div contenteditable="true" spellcheck="true" class="h4 mega" 
+                  data-selected="true" data-label-id="0">Hospital en casa</div>
                 
             </div>
             <form action="#" method="post" class="form-post">
@@ -19,11 +20,13 @@
                 <input type="text" class="form-control" id="id">
               </div>
               
-              <input type="submit" value="Consultar" class="btn btn-block btn-primary button-consulta">
+              <input type="submit" value="Consultar" 
+                class="btn btn-block btn-primary button-consulta">
               
             </form>
             <br>
-            <p> Ingrese el Id del paciente para poder continuar, luego presione el boton consultar </p>
+            <p> Ingrese el Id del paciente para poder continuar, 
+                luego presione el boton consultar </p>
             <br>
             </div>
           </div>

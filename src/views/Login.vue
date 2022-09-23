@@ -41,7 +41,8 @@
               </div>
               
             </form>
-            <div class="ml-auto"><a href="#" class="forgot-pass forgot-password">Olvide mi contraseña</a></div> 
+            <div class="ml-auto"><a href="#" class="forgot-pass forgot-password">
+              Olvide mi contraseña</a></div> 
             <div class="ml-auto"><a href="registro" class="registro">Registro</a></div>
             </div>
           </div>

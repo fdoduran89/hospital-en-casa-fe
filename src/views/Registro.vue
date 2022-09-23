@@ -14,17 +14,21 @@
 
                         <div class="form-outline">
                           <label class="form-label" for="registro_input_username">Login*</label>
-                          <input type="text" id="registro_input_username" class="form-control form-control-lg" />
+                          <input type="text" id="registro_input_username"
+                            class="form-control form-control-lg" />
                         </div>
 
                         <div class="form-outline">
                           <label class="form-label" for="registro_input_nombres">Nombres*</label>
-                          <input id="registro_input_nombres" class="form-control form-control-lg" type="nombres"/>
+                          <input id="registro_input_nombres" class="form-control form-control-lg"
+                            type="nombres"/>
                         </div>
 
                         <div class="form-outline">
-                          <label class="form-label" for="registro_input_birthday">Fecha de Nacimiento*</label>
-                          <input id="registro_input_birthday" class="form-control form-control-sm" type="date"/>
+                          <label class="form-label" for="registro_input_birthday">
+                            Fecha de Nacimiento*</label>
+                          <input id="registro_input_birthday" class="form-control form-control-sm" 
+                            type="date"/>
                         </div>
                         
                         <div class="form-outline" style="margin-top: 0.8rem;">
@@ -42,32 +46,39 @@
                       
                       <div class="form-outline">
                         <label class="form-label" for="registro_input_paciente">Paciente</label>
-                        <input id="registro_input_paciente" class="form-control form-control-lg" type="paciente"/>
+                        <input id="registro_input_paciente" class="form-control form-control-lg"
+                          type="paciente"/>
                         </div>
 
                       </div>
 
                       <div class="col-md-6 mb-4 pb-2">
                         <div class="form-outline">
-                          <label class="form-label" for="registro_input_password">Contraseña*</label>
-                          <input type="text" id="registro_input_password" class="form-control form-control-lg" />
+                          <label class="form-label" for="registro_input_password">
+                            Contraseña*</label>
+                          <input type="text" id="registro_input_password"
+                            class="form-control form-control-lg" />
                         </div>
 
                         <div class="form-outline">
-                          <label class="form-label" for="registro_input_lastname">Apellidos*</label>
-                          <input type="text" id="registro_input_lastname" class="form-control form-control-lg" />
+                          <label class="form-label" for="registro_input_lastname">
+                            Apellidos*</label>
+                          <input type="text" id="registro_input_lastname" 
+                            class="form-control form-control-lg" />
                         </div>
 
                         <div class="form-outline">
                           <label class="form-label" for="registro_input_phone">Celular*</label>
-                          <input type="text" id="registro_input_phone" class="form-control form-control-lg" />
+                          <input type="text" id="registro_input_phone" 
+                            class="form-control form-control-lg" />
                         </div>
 
                         <div class="form-outline">
-                          <label class="form-label" for="registro_input_parentesco">Parentesco</label>
+                          <label class="form-label" for="registro_input_parentesco">
+                            Parentesco</label>
                           <select class="form-select form-control form-control-lg"
-                            id="registro_input_parentesco" name="registro_input_parentesco" required
-                            placeholder="" selected="0">
+                            id="registro_input_parentesco" name="registro_input_parentesco" 
+                            required placeholder="" selected="0">
                             <option value="0" disabled selected>Parentesco</option>
                             <option value="Madre">Madre</option>
                             <option value="Padre">Padre</option>
@@ -96,10 +107,11 @@
                         </div>
 
                         <div class="form-outline">
-                          <label class="form-label" for="registro_input_especialidad">Especialidad</label>
+                          <label class="form-label" for="registro_input_especialidad">
+                            Especialidad</label>
                           <select class="form-select form-control form-control-lg"
-                            id="registro_input_especialidad" name="registro_input_especialidad" required
-                            placeholder="" selected="0">
+                            id="registro_input_especialidad" name="registro_input_especialidad" 
+                            required placeholder="" selected="0">
                             <option value="0" disabled selected>Especialidad</option>
                             <option value="Pediatria">Pediatria</option>
                             <option value="Cardiologia">Cardiologia</option>
@@ -123,14 +135,17 @@
                     <div class="mb-4 pb-2">
                       <div class="form-outline form-white">
                         <label class="form-label" for="registro_input_direccion">Dirección</label>
-                        <input type="text" id="registro_input_direccion" class="form-control form-control-lg" />
+                        <input type="text" id="registro_input_direccion" 
+                          class="form-control form-control-lg" />
                       </div>
                     </div>
 
                     <div class="mb-4 pb-2">
                       <div class="form-outline form-white">
-                        <label class="form-label" for="registro_input_referencia">Punto de Referencia</label>
-                        <input type="text" id="registro_input_referencia" class="form-control form-control-lg" />
+                        <label class="form-label" for="registro_input_referencia">
+                          Punto de Referencia</label>
+                        <input type="text" id="registro_input_referencia" 
+                          class="form-control form-control-lg" />
                       </div>
                     </div>
 
@@ -138,8 +153,10 @@
                       <div class="col-md-5 mb-4 pb-2">
 
                         <div class="form-outline form-white">
-                          <label class="form-label" for="registro_input_codigo_postal">Código Postal</label>
-                          <input type="text" id="registro_input_codigo_postal" class="form-control form-control-lg" />
+                          <label class="form-label" for="registro_input_codigo_postal">
+                            Código Postal</label>
+                          <input type="text" id="registro_input_codigo_postal" 
+                          class="form-control form-control-lg" />
                         </div>
 
                       </div>
@@ -147,7 +164,8 @@
 
                         <div class="form-outline form-white">
                           <label class="form-label" for="registro_input_ciudad">Ciudad</label>
-                          <input type="text" id="registro_input_ciudad" class="form-control form-control-lg" />
+                          <input type="text" id="registro_input_ciudad" 
+                            class="form-control form-control-lg" />
                         </div>
 
                       </div>
@@ -156,7 +174,8 @@
                     <div class="mb-4 pb-2">
                       <div class="form-outline form-white">
                         <label class="form-label" for="registro_input_pais">País</label>
-                        <input type="text" id="registro_input_pais" class="form-control form-control-lg" />
+                        <input type="text" id="registro_input_pais" 
+                          class="form-control form-control-lg" />
                       </div>
                     </div>
 
@@ -164,8 +183,10 @@
                       <div class="col-md-5 mb-4 pb-2">
 
                         <div class="form-outline form-white">
-                          <label class="form-label" for="registro_input_codigo_area">Código de Área</label>
-                          <input type="text" id="registro_input_codigo_area" class="form-control form-control-lg" />
+                          <label class="form-label" for="registro_input_codigo_area">
+                            Código de Área</label>
+                          <input type="text" id="registro_input_codigo_area" 
+                            class="form-control form-control-lg" />
                         </div>
 
                       </div>
@@ -173,7 +194,8 @@
 
                         <div class="form-outline form-white">
                           <label class="form-label" for="registro_input_telefono">Telefono</label>
-                          <input type="text" id="registro_input_telefono" class="form-control form-control-lg" />
+                          <input type="text" id="registro_input_telefono" 
+                            class="form-control form-control-lg" />
                         </div>
 
                       </div>
@@ -182,14 +204,17 @@
                     <div class="mb-4">
                       <div class="form-outline form-white">
                         <label class="form-label" for="registro_input_email">Email</label>
-                        <input type="text" id="registro_input_email" class="form-control form-control-lg" />
+                        <input type="text" id="registro_input_email" 
+                          class="form-control form-control-lg" />
                       </div>
                     </div>
 
                     <div class="form-check d-flex justify-content-start mb-4 pb-3">
-                      <input class="form-check-input me-3" type="checkbox" value="" id="form2Example3c" />
+                      <input class="form-check-input me-3" type="checkbox" 
+                        value="" id="form2Example3c" />
                       <label class="form-check-label text-white" for="form2Example3">
-                        Acepto los <a href="#!" class="text-white"><u>Terminos y Condiciones</u></a> del servicio.
+                        Acepto los <a href="#!" class="text-white"><u>
+                          Terminos y Condiciones</u></a> del servicio.
                       </label>
                     </div>
 
