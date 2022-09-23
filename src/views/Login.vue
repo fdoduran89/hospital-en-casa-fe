@@ -10,7 +10,8 @@
           <div class="row justify-content-center row-custom">
             <div class="col-md-8">
               <div class="mb-4 bg-info text-white">
-                <div contenteditable="true" spellcheck="true" class="h4 mega" data-selected="true" data-label-id="0">Hospital en casa</div>
+                <div contenteditable="true" spellcheck="true" class="h4 mega"
+                  data-selected="true" data-label-id="0">Hospital en casa</div>
                 
             </div>
             <form action="#" method="post" class="form-post">
@@ -34,7 +35,8 @@
                 </label>
                 <div>
                   
-                  <input type="submit" value="Log In" class="btn btn-block btn-primary button-login">
+                  <input type="submit" value="Log In" 
+                    class="btn btn-block btn-primary button-login">
                 </div>
               </div>
               
@@ -57,7 +59,7 @@ export default {
   name: 'Login',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Bienvenido a Hospital en casa'
     }
   }
 }

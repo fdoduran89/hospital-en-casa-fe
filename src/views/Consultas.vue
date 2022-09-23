@@ -15,13 +15,16 @@
             </div>
             <form action="#" method="post" class="form-post">
               <div class="form-group first input-padding">
-                <label for="id" class="label-single">ID</label>
+                <label for="id" class="label-single">ID Paciente</label>
                 <input type="text" class="form-control" id="id">
               </div>
               
               <input type="submit" value="Consultar" class="btn btn-block btn-primary button-consulta">
               
             </form>
+            <br>
+            <p> Ingrese el Id del paciente para poder continuar, luego presione el boton consultar </p>
+            <br>
             </div>
           </div>
           
@@ -38,7 +41,7 @@ export default {
   name: 'consultas',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Bienvenido a Hospital en casa'
     }
   }
 }
