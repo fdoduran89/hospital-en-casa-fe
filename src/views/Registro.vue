@@ -9,9 +9,6 @@
                 <div class="col-lg-6">
                   <div class="p-5">
                     <h3 class="fw-normal mb-5" style="color: #4835d4;">Información General</h3>
-
-                    
-
                     <div class="row">
                       <div class="col-md-6 mb-4 pb-2">
 
