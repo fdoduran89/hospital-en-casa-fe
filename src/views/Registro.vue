@@ -221,7 +221,6 @@
 
 <script>
   import axios from 'axios';
-
   export default {
     name: 'Registro',
     data: function(){
@@ -271,12 +270,10 @@
           token_access: result.data.access,
           token_refresh: result.data.refresh,
         }
-
         this.$emit('completedSignUp', dataSignUp)
         })
         .catch((error) => {
           console.log(error)
-
           alert("ERROR: Fallo en el registro.");
         });
       },
