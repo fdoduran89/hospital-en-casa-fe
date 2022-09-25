@@ -5,8 +5,9 @@
       <div class="col-md-6">
       <img src="../assets/images/home.png" alt="Image" class="img-fluid">
       </div>
-      <div class="col-md-6 display-6 text-end">
-      <div class="alert"></div> Bienvenidos a su mejor opcion para cuidarte en casa</div>
+      <div class="col-md-6 display-6 text-center">
+      <div class="alert"></div> Bienvenidos a su mejor opcion para 
+        cuidarte en casa</div>
       </div>
     </div>
 </template>
