@@ -41,7 +41,8 @@
             </form>
             <div class="ml-auto"><a href="#" class="forgot-pass forgot-password">
               Olvide mi contraseña</a></div>
-            <div class="ml-auto"><a href="registro" class="registro">Registro</a></div>
+            <div class="ml-auto"><a href="registro" class="registro">
+              Registro</a></div>
             </div>
           </div>
 
@@ -54,7 +55,7 @@
 </template>
 
 <script>
-  import axios from 'axios'
+  import axios from 'axios';
 
   export default {
     name: 'Login',
@@ -78,14 +79,19 @@
             username: this.user.username,
             token_access: result.data.access,
             token_refresh: result.data.refresh,
-        }
+          }
 
-        this.$emit('completedLogIn', dataLogIn)
+          this.$emit('completedLogIn', dataLogIn)
         })
         .catch((error) => {
           if (error.response.status == "401")
           alert("ERROR 401: Credenciales Incorrectas.");
         });
+      },
+      goToRegistro: function(){
+        console.log("hice click 1");
+        // call loadRegistro from parent
+        this.$emit('loadRegistro');
       }
     }
   }

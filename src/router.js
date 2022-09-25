@@ -5,10 +5,6 @@ import Home from './views/Home.vue'
 import Consultas from './views/Consultas.vue'
 const routes = [
                   {
-                    path: '/',
-                    redirect: '/home',
-                  },
-                  {
                     path: '/login',
                     name: 'login',
                     component: Login

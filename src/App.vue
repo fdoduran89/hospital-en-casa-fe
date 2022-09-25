@@ -2,15 +2,15 @@
   <div class="header">
     <h2>Hospital App</h2>
     <nav>
-        <button v-if="is_auth" > Home </button>
-        <button v-if="is_auth" > Consulta Paciente </button>
-        <button v-if="is_auth" > Cerrar Sesión </button>
+        <a href="home"><button v-if="is_auth"> Home </button></a>
+        <a href="consultas"><button v-if="is_auth" > Consulta Paciente </button></a>
+        <a href="login"><button v-if="is_auth" > Cerrar Sesión </button></a>
     </nav>
   </div>
 <div class="main-component">
   <router-view
-   v-on:completedLogIn="completedLogIn"
-   v-on:completedSignUp="completedSignUp"
+    v-on:completedLogIn="completedLogIn"
+    v-on:completedSignUp="completedSignUp"
   >
 </router-view>
 </div>
@@ -24,24 +24,44 @@ export default {
   name: 'App',
   data: function () {
     return {
-      is_auth: true
+      is_auth: true,
+      ver_registro: false
     }
   },
   components: {
 },
 methods:{
   verifyAuth: function() {
-    if(this.is_auth == false)
-      this.$router.push({name: "logIn"})
+    // this.ver_registro = localStorage.getItem("verRegistro") || false;
+    // this.is_auth = localStorage.getItem("isAuth") || false;
+
+    // if(this.ver_registro == true)
+    //   this.$router.push({name: "registro"})
+    // else if(this.is_auth == false)
+    //   this.$router.push({name: "login"})
+    // else
+    //   this.$router.push({name: "home"})
 },
 loadLogIn: function(){
-  this.$router.push({name: "logIn"})
+  this.$router.push({name: "login"})
 },
-loadSignUp: function(){
-  this.$router.push({name: "signUp"})
+loadRegistro: function(){
+  console.log("hice click en registro");
+  localStorage.setItem("verRegistro", true);
+  this.$router.push({name: "registro"})
 },
-completedLogIn: function(data) {},
-completedSignUp: function(data) {},
+completedLogIn: function(data) {
+  localStorage.setItem("isAuth", true);
+  localStorage.setItem("username", data.username);
+  localStorage.setItem("token_access", data.token_access);
+  localStorage.setItem("token_refresh", data.token_refresh);
+  alert("Autenticación Exitosa");
+  this.verifyAuth();
+},
+completedSignUp: function(data) {
+  alert("Registro Exitoso");
+  this.completedLogIn(data);
+},
 },
 created: function(){
   this.verifyAuth()

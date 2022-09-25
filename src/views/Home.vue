@@ -6,13 +6,23 @@
       <img src="../assets/images/home.png" alt="Image" class="img-fluid">
       </div>
       <div class="col-md-6 display-6 text-center">
-      <div class="alert"></div> Bienvenidos a su mejor opcion para 
-        cuidarte en casa</div>
+      <div class="greetings alert">
+      ¡Bienvenido <span> {{username}} </span>! a tu mejor opcion para
+        cuidarte en casa
+      </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
-// @ is an alias to /src
+export default {
+  name: 'Home',
+  data: function (){
+    return {
+      username: localStorage.getItem("username") || ""
+    }
+  }
+}
 
 </script>
