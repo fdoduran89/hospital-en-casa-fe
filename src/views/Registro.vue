@@ -115,13 +115,13 @@
 
                             <div id="paciente" v-if="paciente_options">
 
-                               <div id="medico">
+                                <div id="medico">
                                 <label for="" class="form-label">
                                   Medico
                                 </label>
-                                 <!-- TODO: hacer lista de medico -->
+                                  <!-- TODO: hacer lista de medico -->
                                 <input type="text" class="form-control form-control-sm" v-model="registro.paciente.psalud_id_id">
-                               </div>
+                                </div>
 
                               <div class="form-outline">
                                 <label class="form-label" for="registro_input_birthday">
@@ -170,7 +170,7 @@
 
                               <input id="registro_input_paciente" class="form-control form-control-lg"
                                 type="text" v-model="registro.familiar.id_paciente_id"/>
-                                # TODO: hacer lista de pacientes
+                                
                             </div>
 
                             </div>
