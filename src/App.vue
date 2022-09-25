@@ -15,7 +15,7 @@
 </router-view>
 </div>
   <div class="footer">
-    Ciclo 3 - 2022
+    Ciclo 3 - 2022 Grupo 60-equipo 1
   </div>
 </template>
 
@@ -35,10 +35,10 @@ methods:{
       this.$router.push({name: "logIn"})
 },
 loadLogIn: function(){
-   this.$router.push({name: "logIn"})
+  this.$router.push({name: "logIn"})
 },
 loadSignUp: function(){
-   this.$router.push({name: "signUp"})
+  this.$router.push({name: "signUp"})
 },
 completedLogIn: function(data) {},
 completedSignUp: function(data) {},

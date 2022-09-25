@@ -274,7 +274,7 @@
     methods: {
       processSignUp: function(){
         axios.post(
-          "https://mision-tic-bank-be.herokuapp.com/user/",
+          "https://hospitalizacion-en-casa-g60-e1.herokuapp.com/user/",
           this.user,
           {headers: {}}
         )
