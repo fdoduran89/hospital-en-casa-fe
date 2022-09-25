@@ -8,7 +8,7 @@
         </div>
         <div class="col-md-6 contents">
           <div class="row justify-content-center row-custom">
-            <div class="col-md-8">
+            <div class="col-md-8 btn">
               <div class="mb-4 bg-info text-white">
                 <div contenteditable="true" spellcheck="true" class="h4 mega" 
                   data-selected="true" data-label-id="0">Hospital en casa</div>

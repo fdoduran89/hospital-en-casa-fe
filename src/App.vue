@@ -32,13 +32,13 @@ export default {
 methods:{
   verifyAuth: function() {
     if(this.is_auth == false)
-      this.$router.push({name: "logIn"})
+      this.$router.push({name: "login"})
 },
 loadLogIn: function(){
-  this.$router.push({name: "logIn"})
+  this.$router.push({name: "login"})
 },
 loadSignUp: function(){
-  this.$router.push({name: "signUp"})
+  this.$router.push({name: "Registro"})
 },
 completedLogIn: function(data) {},
 completedSignUp: function(data) {},
