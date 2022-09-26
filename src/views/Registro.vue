@@ -208,10 +208,42 @@
 </template>
 
 <script>
+  import axios from 'axios';
   export default {
-    name: 'Registro'
+      data:function(){
+          return{
+              user:{
+                  username: "",
+                  password: "",
+                  name: "",
+                  email: "",
+                  account: {
+                      lastChangeDate: (new Date()).toJSON().toString(),
+                      balance: "",
+                      isActive: true
+                  }
+              }
+          }
+      },
+      methods:{
+          processRegistro:function(){
+              axios.post("https://hospitalizacion-en-casa-g60-e1.herokuapp.com/user/", this.user)//,{headers:{}})
+              .then((result)=>{
+                  alert("Registro Exitoso");
+                  let dataRegistro={
+                      username: this.user.username,
+                      token_access: result.data.access,
+                      token_refresh: result.data.refresh
+                  }
+                  this.$emit('completedRegistro',dataRegistro)
+              }).catch((error)=>{
+                  console.log(error)
+                  alert("Error: fallo el registro");
+              })
+          }
+      }
   }
-</script>
+  </script>
 
 <style scoped>
   .bg-indigo {

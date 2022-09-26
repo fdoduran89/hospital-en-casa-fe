@@ -13,16 +13,16 @@
                 <div contenteditable="true" spellcheck="true" class="h4 mega" data-selected="true" data-label-id="0">Hospital en casa</div>
                 
             </div>
-            <form action="#" method="post" class="form-post">
+            <form v-on:submit.prevent="processLogInUser">
               <div class="form-group first input-padding">
-                <label for="username" class="label-single">Username</label>
-                <input type="text" class="form-control" id="username">
-
+                <label id="user_username" class="label-single">Username
+                <input type="text" v-model="user.username" placeholder="Usuario" required>
+              </label>
               </div>
               <div class="form-group last input-padding">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password">
-                
+                <label id="user_password"> Password:
+                <input type="password" v-model="user.password" placeholder="Contraseña" required>
+                </label>
               </div>
               
               <div class="mb-1 align-items-center">
@@ -34,7 +34,7 @@
                 </label>
                 <div>
                   
-                  <input type="submit" value="Log In" class="btn btn-block btn-primary button-login">
+                  <input type="submit" value="Iniciar sesión" v-on:click="loadLogIn" class="btn btn-block btn-primary button-login">
                 </div>
               </div>
               
@@ -53,15 +53,38 @@
 </template>
 
 <script>
-export default {
-  name: 'Login',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+  import axios from 'axios';
+  export default {
+      data:function(){
+          return{
+              user:{
+                  username:"",
+                  password:""
+              }
+          }
+      },
+      methods:{
+          processLogInUser: function(){
+              axios.post("https://hospitalizacion-en-casa-g60-e1.herokuapp.com/login/",
+              this.user)//, {header:{}})
+              .then((result)=>{
+                  console.log(result);
+                   let dataLogin={
+                      username: this.user.username,
+                      //token_access: result.data.access,
+                      //token_refresh: result.data.refresh,
+                   }
+                   this.$emit('completedLogin', dataLogin)
+                   alert("Login correcto")
+              }).catch((error)=>{
+                  if(error.response.status=="401")
+                      alert("ERROR 401: Credenciales Incorrectas");
+              }
+              );
+          }
+      }
   }
-}
-</script>
+  </script>
 
 <style scoped>
   .mega{
