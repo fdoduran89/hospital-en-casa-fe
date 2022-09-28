@@ -3,16 +3,10 @@ import Registro from './views/Registro.vue'
 import Login from './views/Login.vue'
 import Home from './views/Home.vue'
 import Consultas from './views/Consultas.vue'
-const routes = [
-                  {
+const routes = [  {
                     path: '/login',
                     name: 'login',
                     component: Login
-                  },
-                  {
-                    component: Home,
-                    name: "home",
-                    path: "/home",
                   },
                   {
                     path: '/registro',
@@ -21,12 +15,15 @@ const routes = [
                   {
                     path: '/consultas',
                     name: 'consultas',
-                    component: Consultas} ]
-
+                    component: Consultas},
+                    {
+                      path: '/home',
+                      name: 'home',
+                      component: Home} ]
+                  
 
 const router = createRouter({
                             history: createWebHistory(),
                             routes
                             })
-
 export default router

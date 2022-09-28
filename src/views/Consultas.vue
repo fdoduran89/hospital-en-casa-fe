@@ -44,9 +44,28 @@ export default {
   name: 'consultas',
   data () {
     return {
+      paciente:{
+        id:"",
       msg: 'Bienvenido a Hospital en casa'
+      }
+      
     }
+  },
+  methods:{
+  processConsulta: function(){
+    axios.post("http://127.0.0.1:8000/consulta",
+    this.paciente)
+    .then((result)=>{
+      let dataPaciente={
+        paciente: this.paciente.id,
+      }
+      this.$emit('loadConsulta',dataPaciente)
+    }).catch((error)=>{
+      if(error.response.status=="401")
+        alert("Error 401:Usuario no encontrado");
+    });
   }
+}
 }
 </script>
 

@@ -2,15 +2,15 @@
   <div class="header">
     <h2>Hospital App</h2>
     <nav>
-        <a href="home"><button v-if="is_auth"> Home </button></a>
-        <a href="consultas"><button v-if="is_auth" > Consulta Paciente </button></a>
-        <a href="login"><button v-if="is_auth" > Cerrar Sesión </button></a>
+        <a href="home"><button > Home </button></a>
+        <a href="consultas"><button v-if="is_auth" v-on:click="loadConsulta"> Consulta Paciente </button></a>
+        <a href="logOut"><button  v-on:click="logOut"> Cerrar Sesión </button></a>
     </nav>
   </div>
 <div class="main-component">
   <router-view
-    v-on:completedLogIn="completedLogIn"
-    v-on:completedSignUp="completedSignUp"
+    v-on:completedLogin="completedLogin"
+    v-on:completedRegistro="completedRegistro"
   >
 </router-view>
 </div>
@@ -20,54 +20,56 @@
 </template>
 
 <script>
-export default {
-  name: 'App',
-  data: function () {
-    return {
-      is_auth: true,
-      ver_registro: false
+  export default({
+    data: function(){
+        return{
+          is_auth: false
+        }
+    },
+    methods:{
+      veryAuth: function(){
+        this.is_auth= localStorage.getItem("isAuth") || false;
+        if(this.is_auth== false)
+          this.$router.push({name:"login"});
+        else
+          this.$router.push({name:"registro"});
+      },
+      loadLogin: function(){
+          this.$router.push({name:"login"})
+      },
+      loadRegistro: function(){
+          this.$router.push({name:"registro"})
+      },
+      completedLogin: function(data){
+  
+          localStorage.setItem("isAuth", true);
+          localStorage.setItem("username", data.username);
+          //localStorage.setItem("token_access", data.token_access);
+          //localStorage.setItem("token_refresh", data.token_refresh);
+          alert("Auntentificación Exitoda");
+          this.veryAuth();
+      },
+      completedRegistro: function(data){
+          alert("Registro Exitoso");
+          this.completedLogin(data);
+      },
+      logOut:function(){
+        localStorage.clear();
+        alert("Sesion cerrada");
+        this.veryAuth();
+      },
+      loadHome:function(){
+        this.$router.push({name:"home"});
+      },
+      loadConsulta:function(){
+      this.$router.push({name:"consultas"});
     }
-  },
-  components: {
-},
-methods:{
-  verifyAuth: function() {
-    // this.ver_registro = localStorage.getItem("verRegistro") || false;
-    // this.is_auth = localStorage.getItem("isAuth") || false;
-
-    // if(this.ver_registro == true)
-    //   this.$router.push({name: "registro"})
-    // else if(this.is_auth == false)
-    //   this.$router.push({name: "login"})
-    // else
-    //   this.$router.push({name: "home"})
-},
-loadLogIn: function(){
-  this.$router.push({name: "login"})
-},
-loadRegistro: function(){
-  console.log("hice click en registro");
-  localStorage.setItem("verRegistro", true);
-  this.$router.push({name: "registro"})
-},
-completedLogIn: function(data) {
-  localStorage.setItem("isAuth", true);
-  localStorage.setItem("username", data.username);
-  localStorage.setItem("token_access", data.token_access);
-  localStorage.setItem("token_refresh", data.token_refresh);
-  alert("Autenticación Exitosa");
-  this.verifyAuth();
-},
-completedSignUp: function(data) {
-  alert("Registro Exitoso");
-  this.completedLogIn(data);
-},
-},
-created: function(){
-  this.verifyAuth()
-  }
-}
-</script>
+    },
+    created:function(){
+      this.veryAuth();
+    }
+  })
+  </script>
 
 <style>
   body {

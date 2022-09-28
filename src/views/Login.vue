@@ -13,13 +13,15 @@
           </div>
             <form  v-on:submit.prevent="processLogInUser" class="form-post">
               <div class="form-group first input-padding">
-                <label for="username" class="label-single">Username</label>
-                <input type="text" v-model="user.username" class="form-control" id="username">
+                <label for="username" class="label-single">Username: </label>
+                <input type="text" v-model="user.username" class="form-control" id="username" 
+                placeholder="Usuario" required>
 
               </div>
               <div class="form-group last input-padding">
-                <label for="password">Password</label>
-                <input type="password" v-model="user.password" class="form-control" id="password">
+                <label for="password">Password: </label>
+                <input type="password" v-model="user.password" class="form-control" id="password"
+                placeholder="Contraseña" required>
 
               </div>
 
@@ -56,46 +58,36 @@
 
 <script>
   import axios from 'axios';
-
   export default {
-    name: 'Login',
-    data: function (){
-      return {
-        user: {
-          username:"",
-          password:""
-        }
-      }
-    },
-    methods: {
-      processLogInUser: function(){
-        axios.post(
-          "https://hospitalizacion-en-casa-g60-e1.herokuapp.com/login/",
-          this.user,
-          {headers: {}}
-        )
-        .then((result) => {
-          let dataLogIn = {
-            username: this.user.username,
-            token_access: result.data.access,
-            token_refresh: result.data.refresh,
+      data:function(){
+          return{
+              user:{
+                  username:"",
+                  password:""
+              }
           }
-
-          this.$emit('completedLogIn', dataLogIn)
-        })
-        .catch((error) => {
-          if (error.response.status == "401")
-          alert("ERROR 401: Credenciales Incorrectas.");
-        });
       },
-      goToRegistro: function(){
-        console.log("hice click 1");
-        // call loadRegistro from parent
-        this.$emit('loadRegistro');
+      methods:{
+        processLogInUser: function(){
+              axios.post("http://127.0.0.1:8000/login/",
+              this.user, {header:{}})
+              .then((result)=>{
+                  console.log(result);
+                   let dataLogin={
+                      username: this.user.username,
+                      //token_access: result.data.access,
+                      //token_refresh: result.data.refresh,
+                   }
+                   this.$emit('completedLogin', dataLogin)
+              }).catch((error)=>{
+                  if(error.response.status=="401")
+                      alert("ERROR 401: Credenciales Incorrectas");
+              }
+              );
+          }
       }
-    }
   }
-</script>
+  </script>
 
 <style scoped>
   .mega{

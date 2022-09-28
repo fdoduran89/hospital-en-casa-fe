@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <div class="row">
-
+    <div class="row">    
       <div class="col-md-6">
       <img src="../assets/images/home.png" alt="Image" class="img-fluid">
       </div>
@@ -16,13 +15,16 @@
 </template>
 
 <script>
+import { functionTypeAnnotation } from '@babel/types';
+import axios from 'axios';
 export default {
   name: 'Home',
   data: function (){
     return {
-      username: localStorage.getItem("username") || ""
+      //username: localStorage.getItem("username") || ""
     }
-  }
+  },
 }
+
 
 </script>

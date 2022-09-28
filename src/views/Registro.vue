@@ -18,12 +18,12 @@
                               <label class="form-label" for="registro_input_username">Login*</label>
 
                               <input type="text" v-model="registro.user.username" id="registro_input_username"
-                              class="form-control form-control-lg" />
+                              class="form-control form-control-lg" required/>
                             </div>
 
                             <div class="form-outline">
                               <label class="form-label" for="registro_input_nombres">Nombres*</label>
-                              <input id="registro_input_nombres" class="form-control form-control-lg"
+                              <input id="registro_input_nombres" class="form-control form-control-lg" required
                               type="text" v-model="registro.user.name"/>
                             </div>
 
@@ -39,6 +39,7 @@
                                 <option value="Personal Salud">Personal Salud</option>
                                 <option  value="Paciente">Paciente</option>
                                 <option value="Familiar">Familiar</option>
+                                <option value="Auxiliar">Auxiliar</option>
                               </select>
 
                               <br>
@@ -53,21 +54,21 @@
                                 Contraseña*</label>
 
                               <input type="text" v-model="registro.user.password" id="registro_input_password"
-                                class="form-control form-control-lg" />
+                                class="form-control form-control-lg" required />
                             </div>
 
                             <div class="form-outline">
                               <label class="form-label" for="registro_input_lastname">
                                 Apellidos*</label>
                               <input type="text" v-model="registro.user.lastname" id="registro_input_lastname" 
-                                class="form-control form-control-lg" />
+                                class="form-control form-control-lg" required/>
                             </div>
 
                             <div class="form-outline">
-                              <label class="form-label" for="registro_input_phone">Celular*</label>
+                              <label class="form-label" for="registro_input_phone">Telefono*</label>
 
                               <input type="text" v-model="registro.user.phone" id="registro_input_phone" 
-                                class="form-control form-control-lg" />
+                                class="form-control form-control-lg" required/>
                             </div>
 
                             <div id="psalud" v-if="psalud_options" >
@@ -78,10 +79,9 @@
                                 <select class="form-select form-control form-control-lg"
                                   id="registro_input_rol" name="registro_input_rol" required
                                   placeholder="" selected="0" v-model="registro.psalud.rol">
-                                  <option value="0" disabled selected>Rol</option>
+                                  <option value="0" disabled selected>Selecione Rol</option>
                                   <option value="Enfermero">Enfermero</option>
                                   <option value="Medico_urgencias">Medico</option>
-                                  <option value="Auxiliar">Auxiliar</option>
                                   <option value="Otro">Otro</option>
                                 </select>
 
@@ -120,7 +120,7 @@
                                   Medico
                                 </label>
                                   <!-- TODO: hacer lista de medico -->
-                                <input type="text" class="form-control form-control-sm" v-model="registro.paciente.psalud_id_id">
+                                <input type="text" required class="form-control form-control-sm" v-model="registro.paciente.psalud_id">
                                 </div>
 
                               <div class="form-outline">
@@ -128,7 +128,7 @@
                                   Fecha de Nacimiento*</label>
 
                                 <input id="registro_input_birthday" class="form-control form-control-sm"
-                                type="date" v-model="registro.paciente.birthday"/>
+                                type="date" v-model="registro.paciente.birthday" required/>
                               </div>
 
                               <div class="mb-4 pb-2">
@@ -136,7 +136,7 @@
                                   <label class="form-label" for="registro_input_direccion">Dirección</label>
 
                                   <input type="text" v-model="registro.paciente.city" id="registro_input_direccion" 
-                                    class="form-control form-control-lg" />
+                                    class="form-control form-control-lg" required/>
                                 </div>
                               </div>
                             </div>
@@ -166,10 +166,10 @@
                             </div>
 
                             <div class="form-outline">
-                              <label class="form-label" for="registro_input_paciente">Paciente</label>
+                              <label class="form-label" for="registro_input_paciente">id Paciente</label>
 
                               <input id="registro_input_paciente" class="form-control form-control-lg"
-                                type="text" v-model="registro.familiar.id_paciente_id"/>
+                                type="text" v-model="registro.familiar.id_paciente_id" required/>
                                 
                             </div>
 
@@ -190,7 +190,7 @@
                             <label class="form-label" for="registro_input_email">Email</label>
 
                             <input type="text" v-model="registro.user.email" id="registro_input_email"
-                              class="form-control form-control-lg" />
+                              class="form-control form-control-lg" required/>
                           </div>
                         </div>
 
@@ -198,7 +198,7 @@
                           <input class="form-check-input me-3" type="checkbox"
                             value="" id="form2Example3c" />
 
-                          <label class="form-check-label text-white" for="form2Example3">
+                          <label class="form-check-label text-white" required for="form2Example3">
                             Acepto los <a href="#!" class="text-white"><u>
                               Terminos y Condiciones</u></a> del servicio.
                           </label>
@@ -255,6 +255,7 @@
         paciente_options: false,
         psalud_options: false,
         familiar_options: false
+
       }
     },
     methods: {
@@ -276,7 +277,28 @@
           console.log(error)
           alert("ERROR: Fallo en el registro.");
         });
-      },
+        if(this.perfil.tipoUser=="paciente"){
+                axios.post("https://bank-be-g52.herokuapp.com/paciente/", this.paciente,{headers:{}})
+            .then((result)=>{
+                alert("Registro Exitoso");
+                
+            }).catch((error)=>{
+                console.log(error)
+                alert("Error: fallo el registro");
+
+            });
+        }else if(this.perfil.tipoUser=="familiar"){
+                 axios.post("https://bank-be-g52.herokuapp.com/familiar/", this.familiar,{headers:{}})
+            .then((result)=>{
+                alert("Registro Exitoso");
+                
+            }).catch((error)=>{
+                console.log(error)
+                alert("Error: fallo el registro");
+
+            });
+      }
+      },  
       show_paciente_options: function(){
         this.paciente_options = true;
         this.psalud_options = false;
@@ -309,6 +331,12 @@
     }
   }
 </script>
+
+<style scoped>
+  .bg-indigo {
+    background-color: rgb(108, 99, 255);
+  }
+</style>
 
 <style scoped>
   .bg-indigo {
