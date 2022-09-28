@@ -11,7 +11,7 @@
             <div class="col-md-8 text-center">
               <div class="mb-4 bg-info text-white">
           </div>
-            <form  v-on:submit.prevent="processLogInUser" class="form-post">
+            <form  v-on:submit.prevent="processLoginUser" class="form-post">
               <div class="form-group first input-padding">
                 <label for="username" class="label-single">Username: </label>
                 <input type="text" v-model="user.username" class="form-control" id="username" 
