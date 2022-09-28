@@ -261,24 +261,32 @@
     methods: {
       processSignUp: function(){
         axios.post(
-          "https://hospitalizacion-en-casa-g60-e1.herokuapp.com/user/",
+          "http://127.0.0.1:8000/user/",
           this.registro.user,
           {headers: {}}
         )
         .then((result) => {
           let dataSignUp = {
           username: this.registro.user.username,
-          token_access: result.data.access,
-          token_refresh: result.data.refresh,
         }
-        this.$emit('completedSignUp', dataSignUp)
+        this.$emit('completedRegistro', dataRegistro)
         })
         .catch((error) => {
           console.log(error)
           alert("ERROR: Fallo en el registro.");
         });
         if(this.perfil.tipoUser=="paciente"){
-                axios.post("https://bank-be-g52.herokuapp.com/paciente/", this.paciente,{headers:{}})
+                axios.post("http://127.0.0.1:8000/paciente/", this.paciente,{headers:{}})
+            .then((result)=>{
+                alert("Registro Exitoso");
+                
+            }).catch((error)=>{
+                console.log(error)
+                alert("Error: fallo el registro");
+
+            });
+          }else if(this.perfil.tipoUser=="psalud"){
+                 axios.post("http://127.0.0.1:8000/psalud/", this.psalud,{headers:{}})
             .then((result)=>{
                 alert("Registro Exitoso");
                 
@@ -288,7 +296,7 @@
 
             });
         }else if(this.perfil.tipoUser=="familiar"){
-                 axios.post("https://bank-be-g52.herokuapp.com/familiar/", this.familiar,{headers:{}})
+                 axios.post("http://127.0.0.1:8000/familiar/", this.familiar,{headers:{}})
             .then((result)=>{
                 alert("Registro Exitoso");
                 
