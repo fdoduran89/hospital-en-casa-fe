@@ -266,7 +266,6 @@
           {headers: {}}
         )
         .then((result) => {
-          alert("Registro de usuario exitoso");
           let dataSignUp = {
           username: this.registro.user.username,
         }

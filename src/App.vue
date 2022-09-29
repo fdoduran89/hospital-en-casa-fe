@@ -28,7 +28,7 @@
     },
     methods:{
       veryAuth: function(){
-        this.is_auth= localStorage.getItem("isAuth") || false
+        this.is_auth= localStorage.getItem("isAuth") || false;
         if(this.is_auth== false)
           this.$router.push({name:"login"});
         else
@@ -43,7 +43,7 @@
       completedLogin: function(data){
   
           localStorage.setItem("isAuth", true);
-          //localStorage.setItem("username", data.username);
+          localStorage.setItem("username", data.username);
           alert("Auntentificación Exitoda");
           this.veryAuth();
       },
