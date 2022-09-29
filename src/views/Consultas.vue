@@ -53,7 +53,7 @@ export default {
   methods:{
   processConsulta(){
     let id= this.pacienteid;
-    alert(id);
+    //alert(id);
     axios.get(`http://127.0.0.1:8000/consulpaciente/${id}`)
     .then((result) =>{
         this.psalud_id = result.data.psalud_id;
