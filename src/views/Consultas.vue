@@ -17,11 +17,11 @@
             <form action="#" method="post" class="form-post">
               <div class="form-group first input-padding">
                 <label for="id" class="label-single">ID Paciente</label>
-                <input type="text" class="form-control" id="id">
+                <input type="text" class="form-control" id="id" v-model="pacienteid">
               </div>
               
               <input type="submit" value="Consultar" 
-                class="btn btn-block btn-primary button-consulta">
+                class="btn btn-block btn-primary button-consulta" v-on:click="processConsulta">
               
             </form>
             <br>
@@ -40,32 +40,33 @@
 </template>
 
 <script>
-export default {
-  name: 'consultas',
-  data () {
-    return {
-      paciente:{
-        id:"",
-      msg: 'Bienvenido a Hospital en casa'
-      }
-      
+import axios from 'axios';
+export default {  
+    data:function(){
+        return{
+      psalud_id:"",
+      username: "",
+      city: "",
+      birthday: ""     
     }
   },
   methods:{
-  processConsulta: function(){
-    axios.post("http://127.0.0.1:8000/consulta",
-    this.paciente)
-    .then((result)=>{
-      let dataPaciente={
-        paciente: this.paciente.id,
-      }
-      this.$emit('loadConsulta',dataPaciente)
+  processConsulta(){
+    let id= this.pacienteid;
+    alert(id);
+    axios.get(`http://127.0.0.1:8000/consulpaciente/${id}`)
+    .then((result) =>{
+        this.psalud_id = result.data.psalud_id;
+        this.username = result.data.username;
+        this.city = result.data.city;
+        this.birthday = result.data.birthday;
     }).catch((error)=>{
-      if(error.response.status=="401")
-        alert("Error 401:Usuario no encontrado");
+      alert("Aquí está el error");
+      console.log(error);
     });
   }
-}
+},
+created:function(){}
 }
 </script>
 

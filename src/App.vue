@@ -2,9 +2,12 @@
   <div class="header">
     <h2>Hospital App</h2>
     <nav>
-        <a href="registro"><button v-on:click="loadRegistro"> Registro </button></a>
-        <a href="consultas"><button v-if="is_auth" v-on:click="loadConsulta"> Consulta Paciente </button></a>
-        <a href="logOut"><button  v-on:click="logOut"> Cerrar Sesión </button></a>
+        <button v-if="isRegistro" v-on:click="loadRegistro"> Registro </button>
+        <button v-if="isLogin" v-on:click="loadLogin">Login</button>
+        <button v-if="is_auth" v-on:click="loadConsulta"> Consulta Paciente </button>
+        <button v-if="isHome" v-on:click="loadHome"> Home </button>
+        <button v-if="is_auth" v-on:click="logOut"> Cerrar Sesión </button>
+        
     </nav>
   </div>
 <div class="main-component">
@@ -23,22 +26,37 @@
   export default({
     data: function(){
         return{
-          is_auth: false
+          is_auth: false,
+          isLogin: false,
+          isRegistro: true,
+          isHome: false,
+          isLogOut: false,
         }
     },
     methods:{
       veryAuth: function(){
+        this.isLogin = false;
+        this.isRegistro = true;
+        this.isLogOut = false,
         this.is_auth= localStorage.getItem("isAuth") || false;
         if(this.is_auth== false)
           this.$router.push({name:"login"});
+          
+
         else
-          this.$router.push({name:"registro"});
+          this.$router.push({name:"home"});
+          this.isLogOut = true;
       },
       loadLogin: function(){
-          this.$router.push({name:"login"})
+          this.$router.push({name:"login"});
+          this.isRegistro = true;
+          this.isLogin = false;
       },
       loadRegistro: function(){
-          this.$router.push({name:"registro"})
+          this.$router.push({name:"registro"});
+          this.isLogin = true;
+          this.isRegistro = false;
+
       },
       completedLogin: function(data){
   
@@ -58,9 +76,15 @@
       },
       loadHome:function(){
         this.$router.push({name:"home"});
+        this.isHome = false;
+        this.isRegistro = true;
+        this.isConsulta = true;
       },
       loadConsulta:function(){
       this.$router.push({name:"consultas"});
+      this.isRegistro = false;
+      this.isConsulta = false;
+      this.isHome = true;
     }
     },
     created:function(){

@@ -21,7 +21,7 @@ export default {
   name: 'Home',
   data: function (){
     return {
-      //username: localStorage.getItem("username") || ""
+      username: localStorage.getItem("username") || ""
     }
   },
 }
