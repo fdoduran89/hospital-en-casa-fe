@@ -2,13 +2,13 @@
   <div class="header">
     <h2>Hospital App</h2>
     <nav>
-        <a href="home"><button > Home </button></a>
+        <a href="registro"><button v-on:click="loadRegistro"> Registro </button></a>
         <a href="consultas"><button v-if="is_auth" v-on:click="loadConsulta"> Consulta Paciente </button></a>
         <a href="logOut"><button  v-on:click="logOut"> Cerrar Sesión </button></a>
     </nav>
   </div>
 <div class="main-component">
-  <router-view
+  <router-view 
     v-on:completedLogin="completedLogin"
     v-on:completedRegistro="completedRegistro"
   >
@@ -28,7 +28,7 @@
     },
     methods:{
       veryAuth: function(){
-        this.is_auth= localStorage.getItem("isAuth") || false;
+        this.is_auth= localStorage.getItem("isAuth") || false
         if(this.is_auth== false)
           this.$router.push({name:"login"});
         else
@@ -43,7 +43,7 @@
       completedLogin: function(data){
   
           localStorage.setItem("isAuth", true);
-          localStorage.setItem("username", data.username);
+          //localStorage.setItem("username", data.username);
           alert("Auntentificación Exitoda");
           this.veryAuth();
       },

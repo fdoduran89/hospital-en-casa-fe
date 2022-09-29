@@ -18,7 +18,7 @@
                               <label class="form-label" for="registro_input_username">Login*</label>
 
                               <input type="text" v-model="registro.user.username" id="registro_input_username"
-                              class="form-control form-control-lg" required/>
+                              class="form-control form-control-lg" />
                             </div>
 
                             <div class="form-outline">
@@ -54,21 +54,21 @@
                                 Contraseña*</label>
 
                               <input type="text" v-model="registro.user.password" id="registro_input_password"
-                                class="form-control form-control-lg" required />
+                                class="form-control form-control-lg" />
                             </div>
 
                             <div class="form-outline">
                               <label class="form-label" for="registro_input_lastname">
                                 Apellidos*</label>
-                              <input type="text" v-model="registro.user.lastname" id="registro_input_lastname" 
-                                class="form-control form-control-lg" required/>
+                              <input type="text" v-model="registro.user.lastname" id="registro_input_lastname"
+                                class="form-control form-control-lg" />
                             </div>
 
                             <div class="form-outline">
-                              <label class="form-label" for="registro_input_phone">Telefono*</label>
+                              <label class="form-label" for="registro_input_phone">Celular*</label>
 
-                              <input type="text" v-model="registro.user.phone" id="registro_input_phone" 
-                                class="form-control form-control-lg" required/>
+                              <input type="text" v-model="registro.user.phone" id="registro_input_phone"
+                                class="form-control form-control-lg" />
                             </div>
 
                             <div id="psalud" v-if="psalud_options" >
@@ -79,9 +79,9 @@
                                 <select class="form-select form-control form-control-lg"
                                   id="registro_input_rol" name="registro_input_rol" required
                                   placeholder="" selected="0" v-model="registro.psalud.rol">
-                                  <option value="0" disabled selected>Selecione Rol</option>
+                                  <option value="0" disabled selected>Rol</option>
                                   <option value="Enfermero">Enfermero</option>
-                                  <option value="Medico_urgencias">Medico</option>
+                                  <option value="Medico">Medico</option>
                                   <option value="Otro">Otro</option>
                                 </select>
 
@@ -102,7 +102,7 @@
                                   <option value="Otorrinolaringologia">Otorrinolaringologia</option>
                                   <option value="Oftanmologia">Oftanmologia</option>
                                   <option value="Odontologia">Odontologia</option>
-                                  <option value="Medicina_general">Medicina cd general</option>
+                                  <option value="Medicina general">Medicina cd general</option>
                                   <option value="Emergencia">Emergencia</option>
                                   <option value="Otro">Otro</option>
                                 </select>
@@ -120,7 +120,7 @@
                                   Medico
                                 </label>
                                   <!-- TODO: hacer lista de medico -->
-                                <input type="text" required class="form-control form-control-sm" v-model="registro.paciente.psalud_id">
+                                <input type="text" class="form-control form-control-sm" v-model="registro.paciente.psalud_id" required>
                                 </div>
 
                               <div class="form-outline">
@@ -128,15 +128,15 @@
                                   Fecha de Nacimiento*</label>
 
                                 <input id="registro_input_birthday" class="form-control form-control-sm"
-                                type="date" v-model="registro.paciente.birthday" required/>
+                                type="date" required v-model="registro.paciente.birthday"/>
                               </div>
 
                               <div class="mb-4 pb-2">
                                 <div class="form-outline form-white">
                                   <label class="form-label" for="registro_input_direccion">Dirección</label>
 
-                                  <input type="text" v-model="registro.paciente.city" id="registro_input_direccion" 
-                                    class="form-control form-control-lg" required/>
+                                  <input type="text" v-model="registro.paciente.city" id="registro_input_direccion" required
+                                    class="form-control form-control-lg" />
                                 </div>
                               </div>
                             </div>
@@ -166,10 +166,10 @@
                             </div>
 
                             <div class="form-outline">
-                              <label class="form-label" for="registro_input_paciente">id Paciente</label>
+                              <label class="form-label" for="registro_input_paciente">Paciente</label>
 
                               <input id="registro_input_paciente" class="form-control form-control-lg"
-                                type="text" v-model="registro.familiar.id_paciente_id" required/>
+                                type="text" required v-model="registro.familiar.id_paciente"/>
                                 
                             </div>
 
@@ -190,7 +190,7 @@
                             <label class="form-label" for="registro_input_email">Email</label>
 
                             <input type="text" v-model="registro.user.email" id="registro_input_email"
-                              class="form-control form-control-lg" required/>
+                              class="form-control form-control-lg" />
                           </div>
                         </div>
 
@@ -198,7 +198,7 @@
                           <input class="form-check-input me-3" type="checkbox"
                             value="" id="form2Example3c" />
 
-                          <label class="form-check-label text-white" required for="form2Example3">
+                          <label class="form-check-label text-white" for="form2Example3">
                             Acepto los <a href="#!" class="text-white"><u>
                               Terminos y Condiciones</u></a> del servicio.
                           </label>
@@ -238,74 +238,75 @@
           paciente: {
             city: "",
             birthday: "",
-            psalud_id_id: "",
-            username_id: ""
+            psalud_id: "",
+            username: ""
             },
           psalud: {
             rol: "",
             especialidad: "",
-            username_id: ""
+            username: ""
           },
           familiar: {
             parentesco: "",
-            id_paciente_id: "",
-            username_id: ""
+            id_paciente: "",
+            username_id: "",
           }
         },
         paciente_options: false,
         psalud_options: false,
         familiar_options: false
-
       }
     },
     methods: {
       processSignUp: function(){
         axios.post(
-          "http://127.0.0.1:8000/user/",
+          //"https://hospitalizacion-en-casa-g60-e1.herokuapp.com/user/",
+          "http://localhost:8000/user/",
           this.registro.user,
           {headers: {}}
         )
         .then((result) => {
+          alert("Registro de usuario exitoso");
           let dataSignUp = {
           username: this.registro.user.username,
         }
-        this.$emit('completedRegistro', dataRegistro)
+        if(this.registro.user.perfil=="Paciente"){
+                this.registro.paciente.username = this.registro.user.username;
+                axios.post("http://127.0.0.1:8000/paciente/", this.registro.paciente,{headers:{}})
+            .then((result)=>{
+                alert("Registro Exitoso");
+                
+            }).catch((error)=>{
+                console.log(error)
+                alert("Error: fallo el registro");
+            });
+          }else if(this.registro.user.perfil=="Personal Salud"){
+                this.registro.psalud.username = this.registro.user.username;
+                axios.post("http://127.0.0.1:8000/psalud/", this.registro.psalud,{headers:{}})
+            .then((result)=>{
+                alert("Registro Exitoso");
+                
+            }).catch((error)=>{
+                console.log(error)
+                alert("Error: fallo el registro");
+            });
+          }else if(this.registro.user.perfil=="Familiar"){
+                this.registro.familiar.username = this.registro.user.username;
+                axios.post("http://127.0.0.1:8000/familiar/", this.registro.familiar,{headers:{}})
+            .then((result)=>{
+                alert("Registro Exitoso");
+                
+            }).catch((error)=>{
+                console.log(error)
+                alert("Error: fallo el registro");
+            });
+      }
+        this.$emit('completedSignUp', dataSignUp)
         })
         .catch((error) => {
           console.log(error)
           alert("ERROR: Fallo en el registro.");
         });
-        if(this.perfil.tipoUser=="paciente"){
-                axios.post("http://127.0.0.1:8000/paciente/", this.paciente,{headers:{}})
-            .then((result)=>{
-                alert("Registro Exitoso");
-                
-            }).catch((error)=>{
-                console.log(error)
-                alert("Error: fallo el registro");
-
-            });
-          }else if(this.perfil.tipoUser=="psalud"){
-                 axios.post("http://127.0.0.1:8000/psalud/", this.psalud,{headers:{}})
-            .then((result)=>{
-                alert("Registro Exitoso");
-                
-            }).catch((error)=>{
-                console.log(error)
-                alert("Error: fallo el registro");
-
-            });
-        }else if(this.perfil.tipoUser=="familiar"){
-                 axios.post("http://127.0.0.1:8000/familiar/", this.familiar,{headers:{}})
-            .then((result)=>{
-                alert("Registro Exitoso");
-                
-            }).catch((error)=>{
-                console.log(error)
-                alert("Error: fallo el registro");
-
-            });
-      }
       },  
       show_paciente_options: function(){
         this.paciente_options = true;
@@ -334,17 +335,8 @@
         }
       }
     },
-    created: function(){
-      localStorage.setItem("verRegistro", true);
-    }
   }
 </script>
-
-<style scoped>
-  .bg-indigo {
-    background-color: rgb(108, 99, 255);
-  }
-</style>
 
 <style scoped>
   .bg-indigo {

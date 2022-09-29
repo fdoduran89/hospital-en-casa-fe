@@ -3,13 +3,20 @@ import Registro from './views/Registro.vue'
 import Login from './views/Login.vue'
 import Home from './views/Home.vue'
 import Consultas from './views/Consultas.vue'
-const routes = [  {
-                    path: '/login',
+import App from './App.vue'
+const routes = [  
+                  {
+                    path: '/',
+                    name: 'root',
+                    component: App
+                  },  
+                  {
+                    path: '/user/login',
                     name: 'login',
                     component: Login
                   },
                   {
-                    path: '/registro',
+                    path: '/user/registro',
                     name: 'registro',
                     component: Registro},
                   {
