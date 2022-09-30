@@ -69,12 +69,12 @@
               this.user, {header:{}})
               .then((result)=>{
                   console.log(result);
-                  let dataLogin={
+                   let dataLogin={
                       username: this.user.username,
                       //token_access: result.data.access,
                       //token_refresh: result.data.refresh,
-                  }
-                  this.$emit('completedLogin', dataLogin)
+                   }
+                   this.$emit('completedLogin', dataLogin)
               }).catch((error)=>{
                   if(error.response.status=="401")
                       alert("ERROR 401: Credenciales Incorrectas");

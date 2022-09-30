@@ -53,7 +53,7 @@
                               <label class="form-label" for="registro_input_password">
                                 Contraseña*</label>
 
-                              <input type="text" v-model="registro.user.password" id="registro_input_password"
+                              <input type="text" v-model="registro.user.password" id="registro_input_password" required
                                 class="form-control form-control-lg" />
                             </div>
 
@@ -189,7 +189,7 @@
                           <div class="form-outline form-white">
                             <label class="form-label" for="registro_input_email">Email</label>
 
-                            <input type="text" v-model="registro.user.email" id="registro_input_email"
+                            <input type="text" v-model="registro.user.email" id="registro_input_email" required
                               class="form-control form-control-lg" />
                           </div>
                         </div>
@@ -235,7 +235,6 @@
             phone: "",
             email: ""
           },
-          perfil: { tipoUser: "" },
           paciente: {
             city: "",
             birthday: "",
