@@ -14,7 +14,7 @@
                   data-selected="true" data-label-id="0">Hospital en casa</div>
                 
             </div>
-            <form action="#" method="post" class="form-post">
+            <form action="#" method="get" class="form-post">
               <div class="form-group first input-padding">
                 <label for="id" class="label-single">ID Paciente</label>
                 <input type="text" class="form-control" id="id" v-model="pacienteid">
@@ -34,7 +34,37 @@
         </div>
         
       </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="table-responsive">
+            <table class="table table-striped table-hover">
+              <thead>
+              <tr>
+                <th>ID</th>
+                <th>Psalud ID</th>
+                <th>Usuario</th>
+                <th>Ciudad</th>
+                <th>Fecha de nacimiento</th>
+              </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td> {{ pacienteid }} </td>
+                  <td> {{ psalud_id }} </td>
+                  <td> {{ username }} </td>
+                  <td> {{ city }} </td>
+                  <td> {{ birthday }} </td>
+                </tr>
+              </tbody>
+            </table>                  
+          </div>
+          <br>
+          <br>
+          <br>
+      </div>
     </div>
+  </div>
   </div>
   </div>
 </template>
@@ -43,30 +73,38 @@
 import axios from 'axios';
 export default {  
     data:function(){
-        return{
+    return{
+      pacienteid: '',
       psalud_id:"",
       username: "",
       city: "",
-      birthday: ""     
+      birthday: "",
     }
   },
   methods:{
-  processConsulta(){
-    let id= this.pacienteid;
-    //alert(id);
-    axios.get(`http://127.0.0.1:8000/consulpaciente/${id}`)
-    .then((result) =>{
-        this.psalud_id = result.data.psalud_id;
-        this.username = result.data.username;
-        this.city = result.data.city;
-        this.birthday = result.data.birthday;
-    }).catch((error)=>{
-      alert("Aquí está el error");
+  //prevent page reload
+  processConsulta: function(event){
+    event.preventDefault();
+    console.log("Consulta");
+    console.log(this.pacienteid);
+    axios.get("http://localhost:8000/consulpaciente/"+this.pacienteid, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => {
+      console.log(response.data);
+      this.psalud_id = response.data.psalud_id;
+      this.username = response.data.username;
+      this.city = response.data.city;
+      this.birthday = response.data.birthday;
+    })
+    .catch(error => {
       console.log(error);
     });
-  }
-},
+  },
 created:function(){}
+}
 }
 </script>
 
